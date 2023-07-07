@@ -1,0 +1,21 @@
+<section class="container">
+    <h2 class="section-title">
+        Add New Anime
+    </h2>
+    <form class="container" action="<?= base_url(); ?>/add" enctype="multipart/form-data">
+        <label for="title">
+            <input type="text" id="title" name="title" placeholder="title">
+        </label>
+        <label for="deskripsi">
+            <textarea name="deskripsi" id="deskripsi">deskripsi</textarea>
+        </label>
+        <label for="imgSelect">
+            <input type="file" name="img" id="imgSelect" hidden>
+            <img src="" id="img">
+
+        </label>
+
+        <input value="add Anime" class="button" type="submit">
+    </form>
+
+</section>

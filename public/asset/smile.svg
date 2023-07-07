@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="442.4995px" height="322px" viewBox="0 0 442.4995 322" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group-2" transform="translate(0 4)">
+    <path d="M0 53.4999C0 24.5049 23.505 0.999878 52.5 0.999878C81.4949 0.999878 105 24.5049 105 53.4999C105 82.4948 81.4949 106 52.5 106C23.505 106 0 82.4948 0 53.4999Z" id="Oval" fill="#00BCD4" fill-rule="evenodd" stroke="none" />
+    <g id="Group" transform="translate(272.4995 0)">
+      <path d="M166 0L0 52" id="Line" fill="none" fill-rule="evenodd" stroke="#00BCD4" stroke-width="8" stroke-linecap="square" />
+      <path d="M0 52L166 104" id="Line-2" fill="none" fill-rule="evenodd" stroke="#00BCD4" stroke-width="8" stroke-linecap="square" />
+    </g>
+    <path d="M52.249 193C52.0834 195.159 51.9995 197.334 51.9995 199.522C51.9995 264.956 126.992 318 219.5 318C312.007 318 387 264.956 387 199.522C387 197.334 386.916 195.159 386.75 193C381.964 255.401 308.913 304.957 219.5 304.957C130.086 304.957 57.035 255.401 52.249 193Z" id="Oval-2-Subtract" fill="#00BCD4" fill-rule="evenodd" stroke="none" />
+  </g>
+</svg>
