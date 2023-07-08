@@ -14,11 +14,11 @@ class AnimeModel extends Model
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'title', 'description', 'raing', 'img', 'slug'
+        'title', 'description', 'rating', 'img', 'slug'
     ];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
 }

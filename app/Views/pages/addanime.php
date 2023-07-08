@@ -3,7 +3,7 @@
     <h2 class="section-title">
         Add New Anime
     </h2>
-    <form class="container" action="<?= base_url(); ?>/add" enctype="multipart/form-data">
+    <form class="container" action="<?= base_url(); ?>/add" enctype="multipart/form-data" method="post">
         <label for="title">
             <input type="text" id="title" name="title" placeholder="title">
         </label>
@@ -11,7 +11,7 @@
             <textarea name="deskripsi" id="deskripsi">deskripsi</textarea>
         </label>
         <label for="rating">
-            <textarea name="number" id="rating">rating</textarea>
+            <input type="number" name="rating" placeholder="rating">
         </label>
         <label for="imgSelect">
             <input type="file" name="img" id="imgSelect" hidden>

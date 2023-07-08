@@ -58,7 +58,7 @@ $routes->get('about', [AboutUs::class, 'index']);
 $routes->get('contact', [ContactUs::class, 'index']);
 
 // add
-$routes->get("add", [AddAnime::class, "index"]);
+$routes->match(['get', 'post'], "add", [AddAnime::class, "index"]);
 $routes->get("addepisode", [AddEpisode::class, "index"]);
 
 // auth

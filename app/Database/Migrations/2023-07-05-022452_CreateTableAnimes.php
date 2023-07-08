@@ -46,7 +46,15 @@ class CreateTableAnimes extends Migration
 
             'created_at' => [
                 'type' => 'datetime',
-            ]
+            ],
+
+            'updated_at' => [
+                'type' => 'datetime',
+            ],
+
+            'deleted_at' => [
+                'type' => 'datetime',
+            ],
         ]);
 
         $this->forge->addPrimaryKey('id_anime');
