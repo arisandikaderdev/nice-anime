@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Episode extends Migration
+class CreateTableEpisode extends Migration
 {
     public function up()
     {
@@ -45,8 +45,10 @@ class Episode extends Migration
 
                 'id_anime' => [
                     'type' => 'INT',
-                    'constraint' => '200'
+                    'constraint' => '200',
+                    'unsigned' => true,
                 ],
+
 
                 'created_at' => [
                     'type' => 'DATETIME'
@@ -55,7 +57,7 @@ class Episode extends Migration
         );
 
         // primary key
-        $this->forge->addKey('id_episode', true);
+        $this->forge->addKey('id_episode');
 
         // foreign key
         $this->forge->addForeignKey('id_anime', 'animes', 'id_anime');

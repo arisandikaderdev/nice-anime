@@ -4,60 +4,53 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateTableAnimes extends Migration
+class CreateUserTable extends Migration
 {
     public function up()
     {
-        //field
-
         $this->forge->addField([
-            'id_anime' => [
+            'id_user' => [
                 'type' => 'int',
                 'constraint' => '200',
                 'unsigned' => true,
                 'null' => false,
                 'auto_increment' => true
             ],
-
-            'title' => [
+            'username' => [
                 'type' => 'varchar',
                 'constraint' => '200',
-                'null' => false,
+                'null' => false
             ],
 
-            'description' => [
+            'password' => [
                 'type' => 'text',
                 'null' => false
             ],
 
-
-            'rating' => [
+            'email' => [
                 'type' => 'varchar',
-                'constraint' => '2',
+                'constraint' => '200',
+                'null' => false
             ],
-            'img' => [
+
+            'profile_pic' => [
                 'type' => 'text',
             ],
 
-            'slug' => [
-                'type' => 'varchar',
-                'constraint' => '200'
-            ],
-
             'created_at' => [
-                'type' => 'datetime',
+                'type' => "datetime",
+                'null' => true
             ]
         ]);
 
-        $this->forge->addPrimaryKey('id_anime');
+        $this->forge->addPrimaryKey('id_user');
 
-
-        $this->forge->createTable('animes', true, ["ENGINE" => 'innoDB']);
+        $this->forge->createTable('user', true, ["ENGINE" => 'innoDb']);
     }
 
     public function down()
     {
-        //drop table
-        $this->forge->dropTable('animes');
+        //drop database
+        $this->forge->dropTable('user', true);
     }
 }

@@ -1,4 +1,5 @@
 <section class="container">
+    <?= validation_list_errors(); ?>
     <h2 class="section-title">
         Add New Anime
     </h2>
@@ -8,6 +9,9 @@
         </label>
         <label for="deskripsi">
             <textarea name="deskripsi" id="deskripsi">deskripsi</textarea>
+        </label>
+        <label for="rating">
+            <textarea name="number" id="rating">rating</textarea>
         </label>
         <label for="imgSelect">
             <input type="file" name="img" id="imgSelect" hidden>
