@@ -3,7 +3,7 @@
     <h2 class="section-title">
         Add New Anime
     </h2>
-    <form class="container" action="<?= base_url(); ?>/add" enctype="multipart/form-data" method="post">
+    <form class="container" action="<?= base_url(); ?>add" enctype="multipart/form-data" method="post">
         <label for="title">
             <input type="text" id="title" name="title" placeholder="title">
         </label>

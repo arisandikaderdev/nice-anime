@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Libraries\FileUpload;
 
 class AddAnime extends BaseController
 {
@@ -28,11 +29,16 @@ class AddAnime extends BaseController
             'rating' => 'required',
         ];
 
+
         if (!$this->validate($rules)) {
+
             return view("templates/header", ["title" => 'Add New Anime'])
                 . view("pages/addanime")
                 . view("templates/footer");
         }
+
+        $slug = url_title($post['title'], '-');
+        $fileUpload = new FileUpload;
 
 
 
@@ -40,11 +46,15 @@ class AddAnime extends BaseController
             'title' => $post['title'],
             'description' => $post['deskripsi'],
             'rating' => $post['rating'],
-            'slug' => url_title($post['title'], '-')
+            'slug' => $slug,
+            'img' => base_url() . "$slug/banner.jpg"
         ];
 
         if ($AnimeDb->save($data)) {
+
             session()->setFlashdata('message', 'succesfull add anime');
+
+            $fileUpload->animeImg($img, $slug);
             return redirect()->back();
         }
     }
