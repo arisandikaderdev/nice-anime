@@ -8,7 +8,5 @@ class FileUpload
     {
 
         $img->move("anime/$slug/", "banner.jpg");
-
-        die();
     }
 }

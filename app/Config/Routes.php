@@ -19,7 +19,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-// $routes->setAutoRoute(false);
+$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -47,9 +47,8 @@ use App\Controllers\Login;
 use App\Controllers\Singup;
 
 
-$routes->get('/', 'Home::index');
-$routes->get("anime", [Anime::class, "index"]);
-$routes->get("anime/episode", [AnimeEpisode::class, "index"]);
+$routes->get("post/(:any)", [Anime::class, 'index']);
+$routes->get("episode/(:any)", [AnimeEpisode::class, "index"]);
 
 // navbar
 
@@ -64,6 +63,9 @@ $routes->get("addepisode", [AddEpisode::class, "index"]);
 // auth
 $routes->get("login", [Login::class, 'index']);
 $routes->get('singup', [Singup::class, 'index']);
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

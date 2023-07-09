@@ -6,9 +6,15 @@ use App\Controllers\BaseController;
 
 class Anime extends BaseController
 {
-    public function index()
+    public function index($slug)
     {
-        return view("templates/header", ['title' => "Anime name here"])
+        $animeModel = model("AnimeModel");
+
+        $data = [
+            'title' => "Anime name here",
+            'anime' => $animeModel->where('slug', $slug)->first()
+        ];
+        return view("templates/header", $data)
             . view("pages/anime")
             . view("templates/footer");
     }

@@ -41,32 +41,34 @@
     </div>
 </section>
 
-<section class="bluray container">
+<section class=" container">
     <h2 class="section-title">
-        Bluray
+        Anime
         <img src="<?= base_url(); ?>/asset/star-2.png" alt="headling">
     </h2>
     <div class="card-wrapper">
-        <a href="#">
-            <div class="card">
-                <img class="card-img" src="<?= base_url(); ?>/asset/card.png" alt="card">
-                <div class="card-body">
-                    <div class="rating">
-                        <img class="w-2" src="<?= base_url(); ?>/asset/star.png" alt="start">
-                        <h4 class="card-rating">7.5</h4>
+        <?php foreach ($animes as $anime) : ?>
+            <a href="<?= "post/" . $anime['slug']; ?>">
+                <div class="card">
+                    <img class="card-img" src="<?= $anime['img']; ?>" alt="<?= $anime['title']; ?>">
+                    <div class="card-body">
+                        <div class="rating">
+                            <img class="w-2" src="<?= base_url(); ?>/asset/star.png" alt="start">
+                            <h4 class="card-rating"><?= $anime['rating']; ?></h4>
+                        </div>
+                        <p class="card-title">
+                            <strong>
+                                <?= $anime['title']; ?>
+                            </strong>
+                        </p>
+
                     </div>
-                    <p class="card-title">
-                        <strong>
-                            Overlord Season 3
-                        </strong>
-                    </p>
-                    <p class="card-episode">Episode 2</p>
-                </div>
-                <div class="overlay">
+                    <div class="overlay">
 
+                    </div>
                 </div>
-            </div>
 
-        </a>
+            </a>
+        <?php endforeach; ?>
     </div>
 </section>

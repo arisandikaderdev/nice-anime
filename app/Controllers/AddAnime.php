@@ -47,7 +47,7 @@ class AddAnime extends BaseController
             'description' => $post['deskripsi'],
             'rating' => $post['rating'],
             'slug' => $slug,
-            'img' => base_url() . "$slug/banner.jpg"
+            'img' => base_url() . "anime/$slug/banner.jpg"
         ];
 
         if ($AnimeDb->save($data)) {

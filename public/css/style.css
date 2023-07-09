@@ -153,14 +153,16 @@ nav ul {
 
 .card-wrapper {
   margin: 1rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); */
+  display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .card {
   position: relative;
-  max-width: 12rem;
+  width: 12rem;
   aspect-ratio: 2/3;
   object-fit: cover;
   overflow: hidden;
@@ -175,6 +177,7 @@ nav ul {
 .card-img {
   aspect-ratio: 2/3;
   transition: 0.3s scale cubic-bezier(0.165, 0.84, 0.44, 1);
+  object-fit: cover;
 }
 
 .card-body {
@@ -215,7 +218,7 @@ nav ul {
 }
 
 .anime-info p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   line-height: 2.5;
 }
 
@@ -426,6 +429,12 @@ input::placeholder {
 
   .episode-wrapper {
     width: 100%;
+  }
+
+  /* card */
+
+  .card {
+    width: 7rem;
   }
 }
 
