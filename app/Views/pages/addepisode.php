@@ -1,12 +1,16 @@
 <section class="container">
+    <?= validation_list_errors(); ?>
     <h2 class="section-title">
         Add Anime Episode
     </h2>
 
     <form action="<?= base_url(); ?>addepisode" method="post">
         <label for="select_anime">
-            <select name="anime_id" id="select_anime">
+            <select name="id_anime" id="select_anime">
                 <option value="">Select anime</option>
+                <?php foreach ($animes as $anime) : ?>
+                    <option value="<?= $anime['id_anime']; ?>"><?= $anime['title']; ?></option>
+                <?php endforeach; ?>
             </select>
         </label>
         <label for="episode">
@@ -23,8 +27,10 @@
                         ]}">
                     <template x-for="(item,index) in data" :key="index">
                         <div class="link-wrapper">
-                            <input type="text" :name="'r1080-' + index" placeholder="insert link">
-                            <input type="text" placeholder="link name" :name="'n1080-' + index">
+                            <input type="text" :name="'1080' + `[
+                                ${index}][res]`" placeholder="insert link">
+                            <input type="text" placeholder="link name" :name="'1080' + `[
+                                ${index}][name]`">
                         </div>
                     </template>
                     <button class="button" @click.prevent="data.push({
@@ -45,8 +51,10 @@
                         ]}">
                     <template x-for="(item,index) in data" :key="index">
                         <div class="link-wrapper">
-                            <input type="text" :name="'r720-' + index" placeholder="insert link">
-                            <input type="text" placeholder="link name" :name="'n720-' + index">
+                            <input type="text" :name="'720' + `[
+                                ${index}][res]`" placeholder="insert link">
+                            <input type="text" placeholder="link name" :name="'720' + `[
+                                ${index}][name]`">
                         </div>
                     </template>
                     <button class="button" @click.prevent="data.push({
@@ -67,8 +75,10 @@
                         ]}">
                     <template x-for="(item,index) in data" :key="index">
                         <div class="link-wrapper">
-                            <input type="text" :name="'r480-' + index" placeholder="insert link">
-                            <input type="text" placeholder="link name" :name="'n480-' + index">
+                            <input type="text" :name="'480' + `[
+                                ${index}][res]`" placeholder="insert link">
+                            <input type="text" placeholder="link name" :name="'480' + `[
+                                ${index}][name]`">
                         </div>
                     </template>
                     <button class="button" @click.prevent="data.push({
@@ -89,8 +99,10 @@
                         ]}">
                     <template x-for="(item,index) in data" :key="index">
                         <div class="link-wrapper">
-                            <input type="text" :name="'r360-' + index" placeholder="insert link">
-                            <input type="text" placeholder="link name" :name="'n360-' + index">
+                            <input type="text" :name="'360' + `[
+                                ${index}][res]`" placeholder="insert link">
+                            <input type="text" placeholder="link name" :name="'360' + `[
+                                ${index}][name]`">
                         </div>
                     </template>
                     <button class="button" @click.prevent="data.push({

@@ -15,8 +15,8 @@ class CreateTableEpisode extends Migration
                 "id_episode" => [
                     'type' => 'INT',
                     'constraintt' => '200',
-                    'null' => false,
                     'unsigned' => true,
+                    'null' => false,
                     "auto_increment" => true
 
                 ],
@@ -24,6 +24,11 @@ class CreateTableEpisode extends Migration
                     'type' => 'INT',
                     'constraint' => '100',
                     'null' => false,
+                ],
+
+                'slug' => [
+                    'type' => "VARCHAR",
+                    'constraint' => '300'
                 ],
 
                 'link_1080' => [
@@ -51,13 +56,22 @@ class CreateTableEpisode extends Migration
 
 
                 'created_at' => [
-                    'type' => 'DATETIME'
+                    'type' => 'DATETIME',
+                    'null' => true
+                ],
+                'updated_at' => [
+                    'type' => 'DATETIME',
+                    'null' => true
+                ],
+                'deleted_at' => [
+                    'type' => 'DATETIME',
+                    'null' => true
                 ]
             ],
         );
 
         // primary key
-        $this->forge->addKey('id_episode');
+        $this->forge->addPrimaryKey('id_episode');
 
         // foreign key
         $this->forge->addForeignKey('id_anime', 'animes', 'id_anime');

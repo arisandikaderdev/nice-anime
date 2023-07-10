@@ -48,7 +48,7 @@ use App\Controllers\Singup;
 
 
 $routes->get("post/(:any)", [Anime::class, 'index']);
-$routes->get("episode/(:any)", [AnimeEpisode::class, "index"]);
+$routes->get("episode/(:segment)/(:segment)", [AnimeEpisode::class, "index"]);
 
 // navbar
 

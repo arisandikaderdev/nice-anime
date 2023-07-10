@@ -17,27 +17,28 @@
     </h2>
 
     <div class="card-wrapper">
-        <a href="#">
-            <div class="card">
-                <img class="card-img" src="<?= base_url(); ?>/asset/card.png" alt="card">
-                <div class="card-body">
-                    <div class="rating">
-                        <img class="w-2" src="<?= base_url(); ?>/asset/star.png" alt="start">
-                        <h4 class="card-rating">7.5</h4>
+        <?php foreach ($episodes as $episode) : ?>
+            <a href="<?= base_url() . "episode/{$episode['slug']}/{$episode['episode']}"; ?>">
+                <div class="card">
+                    <img class="card-img" src="<?= $episode['img']; ?>" alt="card">
+                    <div class="card-body">
+                        <div class="rating">
+                            <img class="w-2" src="<?= base_url(); ?>/asset/star.png" alt="start">
+                            <h4 class="card-rating"><?= $episode['rating']; ?></h4>
+                        </div>
+                        <p class="card-title">
+                            <strong><?= $episode['title']; ?>
+                            </strong>
+                        </p>
+                        <p class="card-episode">Episode <?= $episode['episode']; ?></p>
                     </div>
-                    <p class="card-title">
-                        <strong>
-                            Overlord Season 3
-                        </strong>
-                    </p>
-                    <p class="card-episode">Episode 2</p>
-                </div>
-                <div class="overlay">
+                    <div class="overlay">
 
+                    </div>
                 </div>
-            </div>
 
-        </a>
+            </a>
+        <?php endforeach; ?>
     </div>
 </section>
 

@@ -46,14 +46,17 @@ class CreateTableAnimes extends Migration
 
             'created_at' => [
                 'type' => 'datetime',
+                'null' => true
             ],
 
             'updated_at' => [
                 'type' => 'datetime',
+                'null' => true
             ],
 
             'deleted_at' => [
                 'type' => 'datetime',
+                'null' => true
             ],
         ]);
 

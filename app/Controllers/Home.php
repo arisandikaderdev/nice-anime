@@ -7,11 +7,16 @@ class Home extends BaseController
     public function index()
     {
 
-        $animeDb = model("animeModel");
+        $animeModel = model("animeModel");
+        $episodeModel = model('episodemodel');
+
+        $episode = $episodeModel->join('animes', 'animes.id_anime = episode.id_anime')->findAll();
+
 
         $data = [
             'title' => 'NiceAnime bast anime site',
-            'animes' => $animeDb->findAll()
+            'animes' => $animeModel->findAll(),
+            'episodes' => $episode
         ];
         return view('templates/header', $data)
             . view('pages/homepage')
