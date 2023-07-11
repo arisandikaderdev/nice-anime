@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= base_url(); ?>/css/style.css">
+
     <title><?= $title; ?></title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="<?= base_url(); ?>css/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>css/sweetAlert2.min.css">
+    <!-- js -->
     <script defer src="<?= base_url(); ?>/js/cdn.min.js"></script>
     <script defer src="<?= base_url(); ?>/js/script.js"></script>
+
 </head>
 
 <body>
