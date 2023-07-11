@@ -14,7 +14,7 @@ class AnimeModel extends Model
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'title', 'description', 'rating', 'img', 'slug'
+        'title', 'description', 'rating', 'img', 'slug', 'created_at'
     ];
 
     // Dates

@@ -20,15 +20,21 @@
 
 
     <div class="episode-wrapper">
-        <div class="episode">
-            <a href="#">Episode 1</a>
-        </div>
-        <div class="episode">
-            <a href="#">Episode 1</a>
-        </div>
-        <div class="episode">
-            <a href="#">Episode 1</a>
-        </div>
+
+
+        <?php
+
+        foreach ($episode as $ep) : ?>
+
+            <div class="episode">
+                <a href="<?= base_url() . "episode/{$anime['slug']}/{$ep['episode']}"; ?>">
+
+                    Episode <?= $ep['episode']; ?>
+
+                </a>
+            </div>
+
+        <?php endforeach; ?>
     </div>
 
 </section>

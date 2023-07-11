@@ -10,7 +10,10 @@ class Home extends BaseController
         $animeModel = model("animeModel");
         $episodeModel = model('episodemodel');
 
-        $episode = $episodeModel->join('animes', 'animes.id_anime = episode.id_anime')->findAll();
+        $episode = $episodeModel
+            ->join('animes', 'animes.id_anime = episode.id_anime')
+            ->orderBy('episode.created_at', 'DESC')
+            ->findAll();
 
 
         $data = [
