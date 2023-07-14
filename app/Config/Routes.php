@@ -46,6 +46,8 @@ use App\Controllers\AddEpisode;
 use App\Controllers\Login;
 use App\Controllers\Singup;
 
+use App\Controllers\Home;
+
 
 $routes->get("post/(:any)", [Anime::class, 'index']);
 $routes->get("episode/(:segment)/(:segment)", [AnimeEpisode::class, "index"]);
@@ -62,7 +64,9 @@ $routes->get("addepisode", [AddEpisode::class, "index"]);
 
 // auth
 $routes->get("login", [Login::class, 'index']);
-$routes->get('singup', [Singup::class, 'index']);
+$routes->match(['get', 'post'], 'singup', [Singup::class, 'index']);
+
+$routes->get("/", [Home::class, 'index']);
 
 
 

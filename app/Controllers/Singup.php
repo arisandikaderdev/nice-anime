@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use CodeIgniter\Shield\Entities\User;
 
 class Singup extends BaseController
 {
@@ -16,7 +17,30 @@ class Singup extends BaseController
                 . view('templates/footer');
         }
 
+        // auth libary
+
+        $users = auth()->getProvider();
+
         $post = $this->request->getPost();
+
+
         $img = $this->request->getFile('profile');
+
+        $user = new User(
+            [
+                'username' => $post['username'],
+                'email' => $post['email'],
+                'password' => $post['password'],
+                'status' => 'user'
+            ]
+        );
+
+        if ($users->save($user)) {
+            echo 'succes';
+        }
+
+        $user = $users->findById($users->getInsertID());
+
+        $users->addToDefaultGroup($user);
     }
 }

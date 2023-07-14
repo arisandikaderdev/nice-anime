@@ -1,5 +1,5 @@
 <section class="container form-medium">
-    <form action="<?= base_url(); ?>singup" enctype="multipart/form-data">
+    <form action="<?= base_url(); ?>singup" method="post" enctype="multipart/form-data">
         <h3 class="form-title">Create Your Account</h3>
 
         <label for="username">
