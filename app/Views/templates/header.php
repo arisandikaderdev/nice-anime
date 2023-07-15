@@ -28,7 +28,9 @@
                 <li><a href="<?= base_url(); ?>browse">Browse</a></li>
                 <li><a href="<?= base_url(); ?>about">About</a></li>
                 <li><a href="<?= base_url(); ?>contact">Contact Us</a></li>
-                <li><a href="<?= base_url(); ?>login">Login</a></li>
+                <li><a href="<?= base_url() . auth()->loggedIn() ? 'logout' : 'login'; ?>">
+                        <?= auth()->loggedIn() ? 'logout' : 'login'; ?>
+                    </a></li>
             </ul>
         </nav>
 
@@ -38,7 +40,9 @@
                 <li><a href="<?= base_url(); ?>browse">Browse</a></li>
                 <li><a href="<?= base_url(); ?>about">About</a></li>
                 <li><a href="<?= base_url(); ?>contact">Contact Us</a></li>
-                <li><a href="<?= base_url(); ?>login">Login</a></li>
+                <li><a href="<?= base_url() . auth()->loggedIn() ? 'logout' : 'login'; ?>">
+                        <?= auth()->loggedIn() ? 'logout' : 'login'; ?>
+                    </a></li>
             </ul>
             <div class="menu">
                 <img :class="open && 'hidden'" @click="open = ! open" src="<?= base_url(); ?>/asset/menu.png" alt="menu">

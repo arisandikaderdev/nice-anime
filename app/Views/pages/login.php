@@ -2,8 +2,8 @@
     <form action="<?= base_url(); ?>login" method="post">
         <h3 class="form-title">Login to Your Account</h3>
 
-        <label for="username">
-            <input type="text" placeholder="username" name="username" id="username">
+        <label for="email">
+            <input type="text" placeholder="email" name="email" id="email">
         </label>
 
         <label for="password">

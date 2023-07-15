@@ -11,6 +11,10 @@ class Login extends BaseController
 
         helper('form', 'cookie');
 
+        if (auth()->loggedIn()) {
+            return redirect()->route('userDashboard');
+        }
+
         if (!$this->request->is('post')) {
             return view('templates/header', ['title' => 'login'])
                 . view('pages/login')
@@ -21,7 +25,7 @@ class Login extends BaseController
         $post = $this->request->getPost();
 
         $credentials = [
-            'email' => $post['username'],
+            'email' => $post['email'],
             'password' => $post['password']
         ];
 
@@ -30,5 +34,7 @@ class Login extends BaseController
         if (!$loginAttempt->isOK()) {
             echo "we dont find your acound";
         }
+
+        return redirect()->route('dashboard');
     }
 }

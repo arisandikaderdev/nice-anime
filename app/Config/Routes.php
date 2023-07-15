@@ -45,10 +45,17 @@ use App\Controllers\AddEpisode;
 // auth
 use App\Controllers\Login;
 use App\Controllers\Singup;
+use App\Controllers\Logout;
 
 use App\Controllers\Home;
 
+// dashboard
+use App\Controllers\UserDashboard;
+use App\Controllers\AdminDashboard;
 
+
+
+$routes->get("/", [Home::class, 'index']);
 $routes->get("post/(:any)", [Anime::class, 'index']);
 $routes->get("episode/(:segment)/(:segment)", [AnimeEpisode::class, "index"]);
 
@@ -61,13 +68,15 @@ $routes->get('contact', [ContactUs::class, 'index']);
 // add
 $routes->match(['get', 'post'], "add", [AddAnime::class, "index"]);
 $routes->get("addepisode", [AddEpisode::class, "index"]);
+$routes->get('logout', [Logout::class, 'index']);
 
 // auth
 $routes->get("login", [Login::class, 'index']);
 $routes->match(['get', 'post'], 'singup', [Singup::class, 'index']);
 
-$routes->get("/", [Home::class, 'index']);
-
+// dashboard
+$routes->get('userDashboard', [UserDashboard::class, 'index']);
+$routes->get('dashboard', [AdminDashboard::class, 'index']);
 
 
 /*
