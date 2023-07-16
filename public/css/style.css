@@ -72,10 +72,18 @@ header {
 nav ul {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
 .nav-desktop ul {
   gap: 2rem;
+}
+
+.profile_pic {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* hero img */

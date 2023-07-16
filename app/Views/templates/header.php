@@ -31,6 +31,12 @@
                 <li><a href="<?= base_url() . auth()->loggedIn() ? 'logout' : 'login'; ?>">
                         <?= auth()->loggedIn() ? 'logout' : 'login'; ?>
                     </a></li>
+
+                <?php if (auth()->loggedIn()) : ?>
+                    <li>
+                        <img class="profile_pic" src="<?= auth()->user()->toRawArray()['profile_pic']; ?>" alt="">
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
 
@@ -43,6 +49,11 @@
                 <li><a href="<?= base_url() . auth()->loggedIn() ? 'logout' : 'login'; ?>">
                         <?= auth()->loggedIn() ? 'logout' : 'login'; ?>
                     </a></li>
+                <?php if (auth()->loggedIn()) : ?>
+                    <li>
+                        <img class="profile_pic" src="<?= auth()->user()->toRawArray()['profile_pic']; ?>" alt="">
+                    </li>
+                <?php endif; ?>
             </ul>
             <div class="menu">
                 <img :class="open && 'hidden'" @click="open = ! open" src="<?= base_url(); ?>/asset/menu.png" alt="menu">

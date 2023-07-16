@@ -24,28 +24,33 @@ class Singup extends BaseController
         $post = $this->request->getPost();
 
 
-        $img = $this->request->getFile('profile');
+        $img = $this->request->getFile('img');
+
+        // move file
+
 
         $user = new User(
             [
                 'username' => $post['username'],
                 'email' => $post['email'],
                 'password' => $post['password'],
-                'status' => 'user'
+                'slug' => url_title($post['username'], '-'),
+                'profile_pic' => base_url() . "user/{$post['username']}/profile.jpg"
             ]
         );
 
         if ($users->save($user)) {
+            $img->move("user/{$post['username']}", 'profile.jpg');
             echo 'succes';
         }
 
         $user = $users->findById($users->getInsertID());
 
-        // $users->addToDefaultGroup($user);
-        $user->addGroup('admin');
+        $users->addToDefaultGroup($user);
+        // $user->addGroup('admin');
 
-        $user->addPermission('admin.access', 'admin.settings', 'users.manage-admins');
+        // $user->addPermission('admin.access', 'admin.settings', 'users.manage-admins');
 
-        // $user->addPermission('users.create', 'users.edit');
+        $user->addPermission('users.create', 'users.edit');
     }
 }
