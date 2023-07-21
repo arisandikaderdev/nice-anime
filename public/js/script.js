@@ -22,7 +22,7 @@ function slideAuto() {
     }
     right += viewWidth;
     hero.style.right = right.toString() + "px";
-  }, 4000);
+  }, 5000);
 }
 
 slideAuto();

@@ -20,9 +20,12 @@ class Home extends BaseController
             'title' => 'NiceAnime bast anime site',
             'animes' => $animeModel->findAll(),
             'episodes' => $episode,
+            'slides' => $animeModel->limit(10)
+                ->orderBy('created_at', 'DESC')
+                ->findAll()
         ];
 
-        dd($animeModel->limit(10)->findAll());
+        // dd($animeModel->limit(10)->findAll());
         return view('templates/header', $data)
             . view('pages/homepage')
             . view('templates/footer');

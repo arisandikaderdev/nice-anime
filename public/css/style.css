@@ -194,16 +194,17 @@ nav ul {
 
 .card-wrapper {
   margin: 1rem 0;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); */
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  /* display: flex;
+  flex-wrap: wrap; */
+  gap: clamp(0.5rem, 2vw, 1rem);
 }
 
 .card {
+  flex: 1;
   position: relative;
-  width: 12rem;
+  /* width: 12rem; */
   aspect-ratio: 2/3;
   object-fit: cover;
   overflow: hidden;
@@ -476,6 +477,10 @@ input::placeholder {
 
   .card {
     width: 7rem;
+  }
+
+  .card-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
   }
 }
 

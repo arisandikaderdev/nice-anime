@@ -1,49 +1,18 @@
 <div class="hero-wrapper">
     <div class="slide-container">
-        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
-            <div class="hero-body">
-                <h1>Overlord</h1>
-                <div class="rating">
-                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
-                    <h4>7.5</h4>
+        <?php foreach ($slides as $slide) : ?>
+            <div class="hero-img" style="--bg-img : url(<?= $slide['img']; ?>)">
+                <div class="hero-body">
+                    <h1><?= $slide['title']; ?></h1>
+                    <div class="rating">
+                        <img src="<?= base_url(); ?>/asset/star.png" alt="start">
+                        <h4><?= $slide['rating']; ?></h4>
+                    </div>
+                    <p> <?= $slide['description']; ?></p>
                 </div>
-                <p> stias laboriosam tempore deserunt cupiditate autem. Quo sint impedit eaque voluptates nihil, aliquam nam, repellendus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
+                <div class="overlay"></div>
             </div>
-            <div class="overlay"></div>
-        </div>
-        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
-            <div class="hero-body">
-                <h1>Overlord</h1>
-                <div class="rating">
-                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
-                    <h4>7.5</h4>
-                </div>
-                <p> endus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
-            </div>
-            <div class="overlay"></div>
-        </div>
-        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
-            <div class="hero-body">
-                <h1>Overlord iii</h1>
-                <div class="rating">
-                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
-                    <h4>7.5</h4>
-                </div>
-                <p> endus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
-            </div>
-            <div class="overlay"></div>
-        </div>
-        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
-            <div class="hero-body">
-                <h1>Overlord</h1>
-                <div class="rating">
-                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
-                    <h4>7.5</h4>
-                </div>
-                <p> tenetur blanditiis ea! Corrupti!</p>
-            </div>
-            <div class="overlay"></div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>
 
