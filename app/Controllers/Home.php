@@ -19,8 +19,10 @@ class Home extends BaseController
         $data = [
             'title' => 'NiceAnime bast anime site',
             'animes' => $animeModel->findAll(),
-            'episodes' => $episode
+            'episodes' => $episode,
         ];
+
+        dd($animeModel->limit(10)->findAll());
         return view('templates/header', $data)
             . view('pages/homepage')
             . view('templates/footer');

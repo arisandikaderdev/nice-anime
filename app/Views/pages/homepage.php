@@ -1,14 +1,51 @@
-<section class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
-    <div class="hero-body">
-        <h1>Overlord</h1>
-        <div class="rating">
-            <img src="<?= base_url(); ?>/asset/star.png" alt="start">
-            <h4>7.5</h4>
+<div class="hero-wrapper">
+    <div class="slide-container">
+        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
+            <div class="hero-body">
+                <h1>Overlord</h1>
+                <div class="rating">
+                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
+                    <h4>7.5</h4>
+                </div>
+                <p> stias laboriosam tempore deserunt cupiditate autem. Quo sint impedit eaque voluptates nihil, aliquam nam, repellendus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
+            </div>
+            <div class="overlay"></div>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum natus qui odio quae libero doloribus accusantium, iste nostrum, maxime atque incidunt voluptatum corrupti! Mollitia, eum molestias laboriosam tempore deserunt cupiditate autem. Quo sint impedit eaque voluptates nihil, aliquam nam, repellendus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
+        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
+            <div class="hero-body">
+                <h1>Overlord</h1>
+                <div class="rating">
+                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
+                    <h4>7.5</h4>
+                </div>
+                <p> endus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
+            </div>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
+            <div class="hero-body">
+                <h1>Overlord iii</h1>
+                <div class="rating">
+                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
+                    <h4>7.5</h4>
+                </div>
+                <p> endus nesciunt expedita at reiciendis, dolor voluptatem tenetur blanditiis ea! Corrupti!</p>
+            </div>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-img" style="--bg-img : url(<?= base_url(); ?>/asset/banner.jpg" )>
+            <div class="hero-body">
+                <h1>Overlord</h1>
+                <div class="rating">
+                    <img src="<?= base_url(); ?>/asset/star.png" alt="start">
+                    <h4>7.5</h4>
+                </div>
+                <p> tenetur blanditiis ea! Corrupti!</p>
+            </div>
+            <div class="overlay"></div>
+        </div>
     </div>
-    <div class="overlay"></div>
-</section>
+</div>
 
 <section class="latest-relese container">
     <h2 class="section-title">

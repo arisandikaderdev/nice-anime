@@ -24,17 +24,24 @@ class Login extends BaseController
 
         $post = $this->request->getPost();
 
+
+
         $credentials = [
             'email' => $post['email'],
             'password' => $post['password']
         ];
 
+        // $authenticator = auth('session')->getAuthenticator();
+
+
         $loginAttempt = auth()->attempt($credentials);
 
         if (!$loginAttempt->isOK()) {
             echo "we dont find your acound";
+            return;
         }
 
+        auth()->remember(true);
         return redirect()->route('dashboard');
     }
 }

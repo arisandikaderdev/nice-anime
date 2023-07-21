@@ -24,7 +24,7 @@ class Singup extends BaseController
         $post = $this->request->getPost();
 
 
-        $img = $this->request->getFile('img');
+        $profile_pic = $this->request->getFile('profile_pic');
 
         // move file
 
@@ -39,8 +39,59 @@ class Singup extends BaseController
             ]
         );
 
+        $rules = [
+            "username" => [
+                'rules' => [
+                    'required',
+                    'max_length[30]',
+                    'min_length[3]',
+                    'is_unique[users.username]',
+                ],
+                'errors' => [
+                    'is_unique' => 'username is exist'
+                ]
+            ],
+            "email" => [
+                'rules' => [
+                    'required',
+                    'max_length[254]',
+                    'valid_email',
+                    'is_unique[auth_identities.secret]'
+                ],
+                'errors' => [
+                    'valid_email' => 'email not valid',
+                    'is_unique' => 'email is use in another accound use other'
+                ]
+            ],
+            "password" => [
+                "rules" => 'required|strong_password',
+                'errors' => [
+                    'strong_password' => 'use strong password combine from, uppecase, lowercase and symbol'
+                ]
+            ],
+
+            "passconf" => ['rules' => "required|matches[password]", 'errors' => [
+                'matches' => 'passsword no match'
+            ]],
+
+            "profile_pic" => [
+                'is_image[profile_pic]',
+                'uploaded[profile_pic]',
+                'max_size[profile_pic,2048]',
+                'mime_in[profile_pic,image/png,image/jpeg,image/jpg]'
+            ],
+
+
+        ];
+
+        if (!$this->validate($rules)) {
+            session()->setFlashdata('errors', $this->validator->getErrors());
+
+            return redirect()->back()->withInput();
+        }
+
         if ($users->save($user)) {
-            $img->move("user/{$post['username']}", 'profile.jpg');
+            $profile_pic->move("user/{$post['username']}", 'profile.jpg');
             echo 'succes';
         }
 
