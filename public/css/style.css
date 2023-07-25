@@ -15,6 +15,7 @@
   /* color */
   --clr-primary: hsl(187, 100%, 42%);
   --clr-primary-dark: hsl(186, 100%, 33%);
+  --clr-secondary: #ff9800;
   --clr-bg: hsl(0, 0%, 11%);
   --clr-nav: hsl(0, 0%, 0%);
   --clr-text: hsl(0, 0%, 100%);
@@ -115,27 +116,8 @@ nav ul {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1;
   padding: 1rem;
 }
-/* 
-@keyframes slider {
-  0%,
-  25%,
-  100% {
-    left: 0;
-  }
-
-  30%,
-  55% {
-    left: -100%;
-  }
-
-  60%,
-  85% {
-    left: -200%;
-  }
-} */
 
 .hero-img .hero-body {
   display: flex;
@@ -144,6 +126,7 @@ nav ul {
   position: absolute;
   top: 20%;
   left: 10%;
+  z-index: 2;
 }
 
 .hero-img h1 {
@@ -161,6 +144,11 @@ nav ul {
   line-height: 1.6;
 }
 
+.hero-body > a,
+.hero-body button {
+  cursor: pointer;
+}
+
 .hero-img .overlay {
   background-image: linear-gradient(
     to right top,
@@ -172,7 +160,7 @@ nav ul {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 /* section general */
@@ -201,7 +189,7 @@ nav ul {
   gap: clamp(0.5rem, 2vw, 1rem);
 }
 
-.card {
+.card-wrapper .card {
   flex: 1;
   position: relative;
   /* width: 12rem; */
@@ -400,6 +388,117 @@ input::placeholder {
   width: 2rem;
 }
 
+/* admin dashaboard */
+
+.admin-head {
+  background-color: var(--clr-bg);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: space-between;
+}
+
+.admin-menu {
+  justify-self: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+.admin-menu-items {
+  background-color: transparent;
+  width: 3rem;
+  border: none;
+  position: relative;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 15rem;
+  background-color: var(--clr-bg-transparent);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  border: 1px solid var(--clr-primary);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.dialog a {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: black;
+  background-color: var(--clr-primary);
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  text-align: center;
+}
+
+/* anime list */
+
+.episode-list,
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+
+.episode-list .card,
+.anime-list .card {
+  display: flex;
+  gap: 0.5rem;
+  background-color: black;
+}
+
+.episode-list .card > img,
+.anime-list .card > img {
+  width: 10rem;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  overflow: auto;
+}
+
+.card-detail .description {
+  margin: 1rem 0;
+}
+
+.action {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.card-resolution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* width: max-content; */
+  overflow: auto;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.resolution-items {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--clr-secondary);
+}
+
+.resolution-items > a {
+  background-color: var(--clr-primary);
+  color: black;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.24rem;
+}
+
 /* hidden  item */
 
 .nav-mobile {
@@ -482,6 +581,20 @@ input::placeholder {
   .card-wrapper {
     grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
   }
+
+  .admin-head {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .admin-menu {
+    justify-self: flex-start;
+  }
+
+  .dialog {
+    left: 5%;
+    top: 110%;
+    right: 0;
+  }
 }
 
 /* utility */
@@ -520,6 +633,16 @@ input::placeholder {
   width: 2rem;
 }
 
+.flex {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
 .container {
   width: 90%;
   max-width: 1458px;
@@ -548,4 +671,15 @@ input::placeholder {
   background-color: var(--clr-primary);
   border-radius: 0.4rem;
   padding: 0.6rem 1rem;
+  z-index: 1;
+}
+
+.button-secondary {
+  display: block;
+  border: none;
+  color: black;
+  background-color: var(--clr-secondary);
+  border-radius: 0.4rem;
+  padding: 0.6rem 1rem;
+  z-index: 1;
 }

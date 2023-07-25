@@ -24,8 +24,6 @@ class Login extends BaseController
 
         $post = $this->request->getPost();
 
-
-
         $credentials = [
             'email' => $post['email'],
             'password' => $post['password']
@@ -41,7 +39,9 @@ class Login extends BaseController
             return;
         }
 
-        auth()->remember(true);
+        if (!empty($post['remember'])) {
+            auth()->remember();
+        }
         return redirect()->route('dashboard');
     }
 }

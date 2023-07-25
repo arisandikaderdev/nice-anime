@@ -97,11 +97,11 @@ class Singup extends BaseController
 
         $user = $users->findById($users->getInsertID());
 
-        $users->addToDefaultGroup($user);
-        // $user->addGroup('admin');
+        $user->addGroup('admin');
 
-        // $user->addPermission('admin.access', 'admin.settings', 'users.manage-admins');
+        $user->addPermission('admin.access', 'admin.settings', 'users.manage-admins');
 
-        $user->addPermission('users.create', 'users.edit');
+        // $users->addToDefaultGroup($user);
+        // $user->addPermission('users.create', 'users.edit');
     }
 }

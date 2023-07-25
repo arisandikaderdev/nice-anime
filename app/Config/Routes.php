@@ -52,7 +52,7 @@ use App\Controllers\Home;
 // dashboard
 use App\Controllers\UserDashboard;
 use App\Controllers\AdminDashboard;
-
+use App\Controllers\MenageEpisode;
 
 
 $routes->get("/", [Home::class, 'index']);
@@ -77,7 +77,7 @@ $routes->match(['get', 'post'], 'singup', [Singup::class, 'index']);
 // dashboard
 $routes->get('userDashboard', [UserDashboard::class, 'index']);
 $routes->get('dashboard', [AdminDashboard::class, 'index']);
-
+$routes->get('dashboard/menageepisode', [MenageEpisode::class, "index"]);
 
 /*
  * --------------------------------------------------------------------

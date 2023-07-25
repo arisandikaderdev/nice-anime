@@ -2,13 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Libraries\ModelAnimeEp as ModelGroup;
+
 class Home extends BaseController
 {
     public function index()
     {
 
+
         $animeModel = model("animeModel");
         $episodeModel = model('episodemodel');
+
 
         $episode = $episodeModel
             ->join('animes', 'animes.id_anime = episode.id_anime')
@@ -25,7 +29,6 @@ class Home extends BaseController
                 ->findAll()
         ];
 
-        // dd($animeModel->limit(10)->findAll());
         return view('templates/header', $data)
             . view('pages/homepage')
             . view('templates/footer');

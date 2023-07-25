@@ -8,7 +8,12 @@
                         <img src="<?= base_url(); ?>/asset/star.png" alt="start">
                         <h4><?= $slide['rating']; ?></h4>
                     </div>
+
                     <p> <?= $slide['description']; ?></p>
+
+                    <a href="<?= base_url() . 'post/' .  $slide['slug'] ?>">
+                        <button class="button">Watch Now</button>
+                    </a>
                 </div>
                 <div class="overlay"></div>
             </div>
