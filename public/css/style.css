@@ -436,7 +436,7 @@ input::placeholder {
 }
 
 /* anime list */
-
+.user-list,
 .episode-list,
 .anime-list {
   display: grid;
@@ -444,6 +444,7 @@ input::placeholder {
   gap: 1rem;
 }
 
+.user-list .card,
 .episode-list .card,
 .anime-list .card {
   display: flex;
@@ -458,12 +459,25 @@ input::placeholder {
   object-fit: cover;
 }
 
+.user-list .card img {
+  display: inline-block;
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-list .card-detail {
+  word-break: break-all;
+}
+
 .card-detail {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 0.5rem;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 .card-detail .description {
@@ -574,14 +588,13 @@ input::placeholder {
 
   /* card */
 
-  .card {
+  .card-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  }
+
+  .card-wrapper .card {
     width: 7rem;
   }
-
-  .card-wrapper {
-    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
-  }
-
   .admin-head {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -594,6 +607,10 @@ input::placeholder {
     left: 5%;
     top: 110%;
     right: 0;
+  }
+
+  .card {
+    width: 100%;
   }
 }
 
@@ -665,6 +682,7 @@ input::placeholder {
 }
 
 .button {
+  font-size: clamp(0.8rem, 2vw, 1rem);
   display: block;
   border: none;
   color: black;
@@ -675,6 +693,7 @@ input::placeholder {
 }
 
 .button-secondary {
+  font-size: clamp(0.8rem, 2vw, 1rem);
   display: block;
   border: none;
   color: black;

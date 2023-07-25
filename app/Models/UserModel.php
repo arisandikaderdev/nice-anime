@@ -26,4 +26,31 @@ class UserModel extends UM
     {
         return $this->find($id);
     }
+
+    public function getAllUser()
+    {
+
+        $userGroup =  $this->withIdentities()->findAll();
+
+
+
+        foreach ($userGroup as $user) {
+            $users[] = $user->toRawArray();
+        }
+
+
+
+
+        $result =  array_map([$this, 'getEmail'], $users);
+
+        return $result;
+    }
+
+    private function getEmail($value)
+    {
+        $identitity = array_pop($value);
+        $email = $identitity[0]->toRawArray()['secret'];
+        $value['email'] = $email;
+        return $value;
+    }
 }
