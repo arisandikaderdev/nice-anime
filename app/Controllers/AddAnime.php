@@ -52,7 +52,7 @@ class AddAnime extends BaseController
 
         if ($AnimeDb->save($data)) {
 
-            session()->setFlashdata('message', 'succesfull add anime');
+            session()->setFlashdata('message', 'succesfull add anime 🎉');
 
             $fileUpload->animeImg($img, $slug);
             return redirect()->back();

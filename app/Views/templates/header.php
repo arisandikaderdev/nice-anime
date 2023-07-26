@@ -14,6 +14,8 @@
     <!-- js -->
     <script defer src="<?= base_url(); ?>/js/cdn.min.js"></script>
     <script defer src="<?= base_url(); ?>/js/script.js"></script>
+    <script src="<?= base_url(); ?>js/sweetAlert.2.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
 </head>
 

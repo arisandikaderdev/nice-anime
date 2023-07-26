@@ -54,9 +54,7 @@ class AddEpisode extends BaseController
         $episodeModel->simpleQuery('SET FOREIGN_KEY_CHECKS=0;');
 
         if ($episodeModel->save($row)) {
-            return view("templates/header", $data)
-                . view("pages/addepisode")
-                . view("templates/footer");
+            return redirect()->back()->with('message', 'succesful add episode');
         }
     }
 }

@@ -1,3 +1,16 @@
+<?php if (session()->getFlashdata('message')) : ?>
+    <script>
+        Swal.fire({
+            title: "🎉 Succes 🎉",
+            text: "<?= session()->getFlashdata('message'); ?>",
+            showCloseButton: true,
+            icon: 'success'
+        });
+    </script>
+<?php endif; ?>
+
+
+
 <section class="container">
     <?= validation_list_errors(); ?>
     <h2 class="section-title">

@@ -1,22 +1,17 @@
 <?php if (session()->getFlashdata('message')) : ?>
-
-    <template id="succes-alert">
-        <swal-title color="#00bdd6">
-            succes add new anime Episode
-        </swal-title>
-        <swal-icon type="success" color="#00bdd6"></swal-icon>
-    </template>
-
+    <script>
+        Swal.fire({
+            title: "🎉 Succes 🎉",
+            text: "<?= session()->getFlashdata('message'); ?>",
+            showCloseButton: true,
+            icon: 'success'
+        });
+    </script>
 <?php endif; ?>
 
+
 <section class="container">
-    <?php if (validation_list_errors()) : ?>
-        <template id="error_message">
-            <swall-title>
-                <?= validation_list_errors(); ?>
-            </swall-title>
-        </template>
-    <?php endif; ?>
+
     <h2 class="section-title">
         Add New Anime
     </h2>
@@ -41,15 +36,3 @@
 
 
 </section>
-
-<script>
-    document.body.onload = () => {
-        Swal.fire({
-            template: '#succes-alert' || ''
-        })
-
-        Swal.fire({
-            template: "#error-message" || ''
-        })
-    }
-</script>
